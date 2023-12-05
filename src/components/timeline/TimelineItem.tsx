@@ -17,6 +17,7 @@ export default function TimelineItem({ item }: TimelineItemProps) {
 
     let timeDifference = calculateTimeDifference();
     let timeDifferenceInYears = calculateTimeDifferenceInYears();
+    let timeDifferenceInMonths = timeDifference - timeDifferenceInYears*12;
 
     return (
         <>
@@ -34,7 +35,8 @@ export default function TimelineItem({ item }: TimelineItemProps) {
                             <i className="fa-solid fa-calendar-days"></i>
                             <span>
                                 {format(new Date(item.startingDate), "MMMM yyyy")} - {item.endingDate ? format(new Date(item.endingDate), "MMMM yyyy") : "Present"} 
-                                {` (${timeDifferenceInYears > 0 ? timeDifferenceInYears > 1 ? timeDifferenceInYears + " years " : timeDifferenceInYears + " year " : ""}${timeDifference - timeDifferenceInYears*12} months)`}</span>
+                                {` ( ${timeDifferenceInYears > 0 ? timeDifferenceInYears > 1 ? timeDifferenceInYears + " years " : timeDifferenceInYears + " year " : ""}
+                                ${timeDifferenceInMonths > 0 ? timeDifferenceInMonths === 1 ? timeDifferenceInMonths + " month " : timeDifferenceInMonths + " months " : ""})`}</span>
                         </div>
                     }
                     { item.location && 

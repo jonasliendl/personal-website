@@ -19,7 +19,7 @@ export default function StartPage() {
             organisation: "Berlin School of Economics and Law",
             title: "Bachelor of Science in Computer Science",
             startingDate: new Date("2022-10-01"),
-            endingDate: new Date("2025-09-30"),
+            endingDate: new Date("2025-10-30"),
             location: "Berlin, Germany",
             type: "education",
             description: "At the Berlin School of Economics and Law I am studying Computer Science. This study is part of the Future Talent Program at Tesla."
