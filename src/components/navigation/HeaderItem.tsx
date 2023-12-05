@@ -17,7 +17,7 @@ export default function HeaderItem({ title, path }: HeaderItemProps) {
                         location.pathname === path
                             ? "bg-tangBlue hover:text-darkBackground"
                             : "hover:text-tangBlue",
-                        "flex flex-row items-center justify-center font-bold rounded-md ease-in-out duration-300"
+                        "flex flex-row items-center justify-center font-bold rounded-full ease-in-out duration-300"
                     )
                 }
             >
