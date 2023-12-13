@@ -15,9 +15,9 @@ export default function HeaderItem({ title, path }: HeaderItemProps) {
                 className={
                     twMerge(
                         location.pathname === path
-                            ? "bg-tangBlue hover:text-darkBackground"
-                            : "hover:text-tangBlue",
-                        "flex flex-row items-center justify-center font-bold rounded-full ease-in-out duration-300"
+                            ? "bg-tangBlue"
+                            : "hover:bg-tangBlue hover:text-snow",
+                        "py-[8px] sm:py-[0px] w-full sm:w-fit flex flex-row items-center justify-center font-bold rounded-md ease-in-out duration-300"
                     )
                 }
             >

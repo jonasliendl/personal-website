@@ -1,11 +1,19 @@
 import { useMediaQuery } from "react-responsive";
 import HeaderItem from "./HeaderItem";
 import { Menu, X } from "react-feather";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+type NavItem = {
+    title: string;
+    path: string;
+};
 
 export default function Header() {
-    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
+
+    useEffect(() => {
+        if (!isMobile) setIsMenuOpen(false);
+    }, [isMobile]);
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,6 +21,21 @@ export default function Header() {
         if (isMenuOpen) setIsMenuOpen(false);
         else setIsMenuOpen(true);
     }
+
+    const navItems: NavItem[] = [
+        {
+            title: "👋 Start",
+            path: "/"
+        },
+        {
+            title: "📝 About",
+            path: "/about"
+        },
+        {
+            title: "📁 Projects",
+            path: "/projects"
+        }
+    ];
 
     return (
         <>
@@ -30,25 +53,23 @@ export default function Header() {
                         </div>
                     </div>
                     { !isMobile && <div className="flex flex-row gap-2">
-                        <HeaderItem title="👋 Start" path="/" />
-                        <HeaderItem title="📁 Projects" path="/projects" />
+                        {navItems.map(item => (
+                            <HeaderItem key={item.title} title={item.title} path={item.path} />
+                        ))}
                     </div>}
                     { isMobile && 
-                    <span className="rounded-full px-[6px] py-[6px] hover:bg-tangBlue cursor-pointer ease-in-out duration-300" onClick={toggleMenu} >
+                    <span className="rounded-md px-[6px] py-[6px] hover:bg-tangBlue cursor-pointer ease-in-out duration-300" onClick={toggleMenu} >
                         { !isMenuOpen && <Menu color="snow" />}
                         { isMenuOpen && <X color="snow" />}
                     </span> }
                 </div>
             </header>
             { isMenuOpen && 
-                <div className="w-full absolute h-screen bg-darkBackground z-0">
+                <div className="w-full fixed h-screen bg-darkBackground z-0">
                     <div className="w-11/12 mx-auto mt-[110px] flex flex-col gap-4 justify-center items-center">
-                        <NavLink to="/" className="text-snow w-full hover:bg-tangBlue ease-in-out text-center duration-300 py-[8px] rounded-full">
-                            👋 Home
-                        </NavLink>
-                        <NavLink to="/projects" className="text-snow w-full hover:bg-tangBlue ease-in-out text-center duration-300 py-[8px] rounded-full">
-                            📁 Projects
-                        </NavLink>
+                        {navItems.map(item => (
+                            <HeaderItem key={item.title} title={item.title} path={item.path} />
+                        ))}
                     </div>
                 </div>}
         </>

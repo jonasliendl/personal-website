@@ -7,6 +7,7 @@ export type TypeTimelineItem = {
     type: TimelineItemType;
     location?: string;
     description?: string;
+    tags?: string[];
 };
 
 export type TimelineItemType = "work" | "education" | "project" | "other";

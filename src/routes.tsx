@@ -3,6 +3,7 @@ import StartPage from "./pages/StartPage";
 import Legal from "./pages/Legal";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/404";
+import About from "./pages/About";
 
 export default function Router() {
   return (
@@ -11,6 +12,7 @@ export default function Router() {
       <Route path="/" element={<StartPage />} />
       <Route path="/legal" element={<Legal />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/about" element={<About/>} />
     </Routes>
   );
 }

@@ -7,6 +7,7 @@ module.exports = {
       darkBackground: '#000000',
       darkSurface: '#101010',
       snow: '#FFFAFA',
+      azure: "#007FFF",
       frenchGray: '#BEBFC5',
       royalBlue: '#002366',
       tangBlue: '#0059CF',
