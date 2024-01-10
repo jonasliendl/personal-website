@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive";
 import HeaderItem from "./HeaderItem";
 import { Menu, X } from "react-feather";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 type NavItem = {
     title: string;
@@ -10,6 +11,7 @@ type NavItem = {
 
 export default function Header() {
     const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!isMobile) setIsMenuOpen(false);
@@ -37,11 +39,15 @@ export default function Header() {
         }
     ];
 
+    const navigateHome = () => {
+        navigate("/");
+    }
+
     return (
         <>
             <header className="w-full h-[100px] flex flex-row justify-center items-center bg-darkBackground fixed top-0 shadow-2xl z-10">
                 <div className="w-11/12 mx-auto flex flex-row justify-between items-center">
-                    <div className="flex flex-row gap-6 items-center cursor-pointer rounded-md hover:bg-tangBlue ease-in-out duration-300 px-[14px] py-[4px]">
+                    <div onClick={navigateHome} className="flex flex-row gap-6 items-center cursor-pointer rounded-md hover:bg-tangBlue ease-in-out duration-300 px-[14px] py-[4px]">
                         <img src="https://avatars.githubusercontent.com/u/56661501?v=4" alt="Profile" className="w-[42px] h-[42px] rounded-full" />
                         <div className="flex flex-col">
                             <h1 className="text-snow text-[20px]">
@@ -68,7 +74,7 @@ export default function Header() {
                 <div className="w-full fixed h-screen bg-darkBackground z-0">
                     <div className="w-11/12 mx-auto mt-[110px] flex flex-col gap-4 justify-center items-center">
                         {navItems.map(item => (
-                            <HeaderItem key={item.title} title={item.title} path={item.path} />
+                            <HeaderItem onClick={toggleMenu} key={item.title} title={item.title} path={item.path} />
                         ))}
                     </div>
                 </div>}

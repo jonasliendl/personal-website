@@ -4,14 +4,16 @@ import { twMerge } from "tailwind-merge";
 interface HeaderItemProps {
     title: string;
     path: string;
+    onClick?: () => void;
 }
 
-export default function HeaderItem({ title, path }: HeaderItemProps) {
+export default function HeaderItem({ title, path, onClick }: HeaderItemProps) {
     const location = useLocation();
 
     return (
         <>
             <span
+                onClick={onClick}
                 className={
                     twMerge(
                         location.pathname === path

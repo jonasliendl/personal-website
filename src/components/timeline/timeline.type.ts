@@ -1,3 +1,5 @@
+import { Tag } from "../project/type";
+
 export type TypeTimelineItem = {
     img?: string;
     organisation: string;
@@ -7,7 +9,7 @@ export type TypeTimelineItem = {
     type: TimelineItemType;
     location?: string;
     description?: string;
-    tags?: string[];
+    tags?: Tag[];
 };
 
 export type TimelineItemType = "work" | "education" | "project" | "other";

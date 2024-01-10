@@ -1,5 +1,5 @@
 import Project from "../components/project/Project";
-import { ProjectItem } from "@/components/project/type";
+import { LinkType, ProjectItem } from "../components/project/type";
 
 export default function Projects() {
 
@@ -7,7 +7,12 @@ export default function Projects() {
         {
             title: "Meetandask",
             description: "Meetandask is a student project that aims to create a platform for people to meet experts and ask them questions. It's a platform where people can share their knowledge and get paid for it.",
-            link: "https://test.meetandask.com",
+            links: [
+                {
+                    type: LinkType.Visit,
+                    url: "https://test.meetandask.com"
+                }
+            ],
             tags: [
                 {
                     name: "Next.js",
