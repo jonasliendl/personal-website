@@ -5,6 +5,62 @@ export default function Projects() {
 
     const projects: ProjectItem[] = [
         {
+            title: "Piguesso",
+            description: "Piguesso is a drawing game where players play against each other by drawing a given topic. After drawing, an AI has to detect the topic. The player with the most correct detections wins the game. This is a study project and was built with Next.js, TypeScript, and TensorFlow.js. Also, we are using a Redis cache and a PostgreSQL database. Wth Redis we store the game state, which gives us the possibility to fetch and write data fast.",
+            links: [
+                {
+                    type: LinkType.SourceCode,
+                    url: "https://github.com/piguesso/piguesso-app",
+                },
+                {
+                    type: LinkType.Visit,
+                    url: "https://piguesso.com"
+                }
+            ],
+            tags: [
+                {name: "Next.js"},
+                {name: "TypeScript"},
+                {name: "TensorFlow.js"},
+                {name: "PostgreSQL"},
+                {name: "Redis"},
+                {name: "Tailwind CSS"},
+            ],
+        },
+        {
+            title: "Zwitscher.online",
+            description: "Zwitscher is a Twitter clone which I built with another two students in context of my studies. It consists of a Svelte frontend written in TypeScript, and a Node.js backend with TypeScript and Express.js. For the database we used PostgreSQL.",
+            links: [
+                {
+                    type: LinkType.SourceCode,
+                    url: "https://github.com/zwitscheronline"
+                },
+                {
+                    type: LinkType.Visit,
+                    url: "https://zwitscher.online"
+                }
+            ],
+            tags: [
+                {
+                    name: "Svelte",
+                },
+                {
+                    name: "TypeScript",
+                },
+                {
+                    name: "Express.js",
+                },
+                {
+                    name: "PostgreSQL",
+                },
+                {
+                    name: "Node.js"
+                },
+                {
+                    name: "Tailwind CSS"
+                }
+            ]
+        },
+        {
             title: "Meetandask",
             description: "Meetandask is a student project that aims to create a platform for people to meet experts and ask them questions. It's a platform where people can share their knowledge and get paid for it.",
             links: [

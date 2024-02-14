@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-type SocialMediaIcon = "x-twitter" | "github" | "medium" | "linkedin";
+type SocialMediaIcon = "x-twitter" | "github" | "medium" | "linkedin" | "xing";
 
 interface SocialMediaLinkProps {
     link: string;
