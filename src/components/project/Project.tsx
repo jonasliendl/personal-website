@@ -24,7 +24,7 @@ export default function Project({ item }: ProjectProps) {
                     { item.tags && <div className="w-full overflow-x-scroll">
                         <div className="flex flex-row gap-2 mt-2">
                             {item.tags.map(tag => (
-                                <span key={tag.name} className={twMerge("text-tangBlue duration-300 ease-in-out hover:bg-tangBlue/40 cursor-pointer font-bold font-openSans rounded-md px-4 py-1 bg-tangBlue/20 text-[12px]", tag.highlighted ? "text-azure bg-azure/20" : "")}>
+                                <span key={tag.name} className={twMerge("text-tangBlue duration-300 ease-in-out hover:bg-tangBlue/40 cursor-pointer font-bold font-openSans rounded-md px-4 py-1 bg-tangBlue/20 text-[12px] whitespace-nowrap", tag.highlighted ? "text-azure bg-azure/20" : "")}>
                                     {tag.name}
                                 </span>
                             ))}
